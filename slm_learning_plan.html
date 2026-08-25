@@ -1,0 +1,287 @@
+
+<style>
+*{box-sizing:border-box;}
+.wrap{font-family:var(--font-sans);color:var(--color-text-primary);padding:4px 0;}
+.phase{background:var(--color-background-primary);border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);margin-bottom:14px;overflow:hidden;}
+.phase-header{padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:0.5px solid var(--color-border-tertiary);}
+.phase-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;}
+.phase-title{font-size:14px;font-weight:600;}
+.phase-time{margin-left:auto;font-size:11px;color:var(--color-text-secondary);white-space:nowrap;}
+.phase-body{padding:14px 16px;display:flex;flex-direction:column;gap:10px;}
+.topic{background:var(--color-background-secondary);border-radius:8px;padding:10px 12px;}
+.topic-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:4px;}
+.topic-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.6;}
+.topic-resource{font-size:11px;margin-top:6px;color:var(--color-text-info);}
+.why{background:var(--color-background-info);border-radius:6px;padding:6px 10px;font-size:11px;color:var(--color-text-info);margin-top:6px;}
+.pill-row{display:flex;flex-wrap:wrap;gap:5px;margin-top:6px;}
+.pill{font-size:11px;padding:2px 8px;border-radius:20px;font-family:var(--font-mono);}
+.p-green{background:var(--color-background-success);color:var(--color-text-success);}
+.p-blue{background:var(--color-background-info);color:var(--color-text-info);}
+.p-amber{background:var(--color-background-warning);color:var(--color-text-warning);}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.note{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:12px 16px;border-left:3px solid var(--color-border-success);font-size:12px;color:var(--color-text-secondary);line-height:1.7;margin-bottom:14px;}
+</style>
+
+<div class="wrap">
+
+<div class="note">
+  <strong style="color:var(--color-text-primary);">How to use this plan</strong><br/>
+  Study these phases in order. Don't jump ahead. Each phase builds on the last. You don't need to master everything — you need to know enough to build. Learn by doing, not just reading. As soon as you understand a concept, immediately try it in code.
+</div>
+
+<!-- PHASE 1 -->
+<div class="phase">
+  <div class="phase-header" style="background:#E1F5EE;">
+    <div class="phase-num" style="background:#5DCAA5;color:#04342C;">1</div>
+    <div>
+      <div class="phase-title" style="color:#085041;">Python Foundations</div>
+      <div style="font-size:12px;color:#0F6E56;">Get comfortable before you touch anything AI related</div>
+    </div>
+    <div class="phase-time">Before June · 1–2 weeks</div>
+  </div>
+  <div class="phase-body">
+    <div class="topic">
+      <div class="topic-title">Variables, functions, loops, conditionals</div>
+      <div class="topic-desc">The absolute basics. If you can write a loop, define a function, and handle an if/else — you're ready to move on. Don't overthink this.</div>
+      <div class="why">Why: Every single file in your project uses these. You cannot build anything without them.</div>
+      <div class="topic-resource">📚 Resource: Python.org beginner tutorial or freeCodeCamp Python full course on YouTube</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Working with files and JSON</div>
+      <div class="topic-desc">Reading and writing files in Python. Understanding what JSON is — it's just structured data that APIs use to send information back and forth.</div>
+      <div class="why">Why: Your FastAPI sends and receives JSON. Your results get saved to CSV files.</div>
+      <div class="topic-resource">📚 Resource: Real Python — "Reading and Writing Files in Python"</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Installing libraries and virtual environments</div>
+      <div class="topic-desc">How pip install works. What a virtual environment is and why you use one. How to create a requirements.txt file.</div>
+      <div class="why">Why: You'll install 10+ libraries. Understanding this prevents hours of confusing errors.</div>
+      <div class="topic-resource">📚 Resource: Just practice — create a venv, install streamlit, run hello world</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Importing modules and basic project structure</div>
+      <div class="topic-desc">How to split code across multiple files and import from one file into another. This is the foundation of modularity.</div>
+      <div class="why">Why: Your project has 6 separate files that import from each other. You need to understand how this works.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 2 -->
+<div class="phase">
+  <div class="phase-header" style="background:#E6F1FB;">
+    <div class="phase-num" style="background:#378ADD;color:#042C53;">2</div>
+    <div>
+      <div class="phase-title" style="color:#0C447C;">What Are LLMs and SLMs</div>
+      <div style="font-size:12px;color:#185FA5;">Understand what you're working with before you touch it</div>
+    </div>
+    <div class="phase-time">Before June · 3–4 days</div>
+  </div>
+  <div class="phase-body">
+    <div class="topic">
+      <div class="topic-title">What is a language model — conceptually</div>
+      <div class="topic-desc">Not the maths. Just the concept. A language model predicts the next most likely word given everything before it. That's it. Read about tokens, context windows, and how models generate text one token at a time.</div>
+      <div class="why">Why: You'll be asked this in your viva. You need to explain it clearly without jargon.</div>
+      <div class="topic-resource">📚 Resource: "But what is GPT?" by 3Blue1Brown on YouTube — best visual explanation available</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Difference between LLMs and SLMs</div>
+      <div class="topic-desc">Large models (GPT-4, Claude) vs small models (Mistral, Llama, Phi-3). Parameters, size, capability tradeoffs. Why smaller models can run on laptops.</div>
+      <div class="why">Why: This is the core justification of your entire project. You must be able to explain this.</div>
+      <div class="topic-resource">📚 Resource: Read the introductions of the Mistral 7B and Phi-3 papers on ArXiv — just the abstract and intro sections</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">What is quantization</div>
+      <div class="topic-desc">How models are compressed to run on smaller hardware. The GGUF format. Q4 vs Q5 — what the numbers mean. You don't need to understand the maths, just the concept of lossy compression applied to AI models.</div>
+      <div class="why">Why: Ollama uses quantized models. Your dissertation literature review mentions this. Tony might ask about it.</div>
+      <div class="topic-resource">📚 Resource: Hugging Face quantization guide linked in your project resources</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">What is a system prompt</div>
+      <div class="topic-desc">How you give an AI model its personality and instructions before a conversation starts. The difference between system role and user role in a chat message.</div>
+      <div class="why">Why: Your entire finance specialisation is done through a system prompt. This is your "training" substitute.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 3 -->
+<div class="phase">
+  <div class="phase-header" style="background:#EEEDFE;">
+    <div class="phase-num" style="background:#7F77DD;color:#26215C;">3</div>
+    <div>
+      <div class="phase-title" style="color:#3C3489;">Ollama — Running Models Locally</div>
+      <div style="font-size:12px;color:#534AB7;">The engine of your whole project</div>
+    </div>
+    <div class="phase-time">June Week 1 · 2–3 days</div>
+  </div>
+  <div class="phase-body">
+    <div class="topic">
+      <div class="topic-title">Installing Ollama and pulling models</div>
+      <div class="topic-desc">Download Ollama, run ollama pull for each model, test them in terminal. Get comfortable with the CLI before writing any Python.</div>
+      <div class="why">Why: If you can't get a model talking in terminal, you can't build the app around it.</div>
+      <div class="topic-resource">📚 Resource: Ollama official GitHub quickstart — read and follow it completely</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Ollama Python library</div>
+      <div class="topic-desc">How to use ollama.chat() in Python. Understanding the messages list format — system role, user role, assistant role. How to extract the answer from the response object.</div>
+      <div class="why">Why: This is the core of your api.py file. Every question goes through this.</div>
+      <div class="topic-resource">📚 Resource: Ollama Python library README on GitHub — short and clear</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Running Ollama as a server</div>
+      <div class="topic-desc">The difference between ollama run (interactive terminal) and ollama serve (background server). Why you need ollama serve running before your FastAPI can work.</div>
+      <div class="why">Why: Your whole app depends on Ollama running as a background service.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 4 -->
+<div class="phase">
+  <div class="phase-header" style="background:#FAEEDA;">
+    <div class="phase-num" style="background:#EF9F27;color:#412402;">4</div>
+    <div>
+      <div class="phase-title" style="color:#633806;">FastAPI — Building the API</div>
+      <div style="font-size:12px;color:#854F0B;">The door between your interface and your models</div>
+    </div>
+    <div class="phase-time">June Week 1–2 · 3–4 days</div>
+  </div>
+  <div class="phase-body">
+    <div class="topic">
+      <div class="topic-title">What is an API and how HTTP requests work</div>
+      <div class="topic-desc">What GET and POST requests are. What a URL endpoint is. What JSON request and response bodies look like. You use APIs every day — weather apps, Google Maps — now you're building one.</div>
+      <div class="why">Why: You need to understand what FastAPI is actually doing before you write it.</div>
+      <div class="topic-resource">📚 Resource: FastAPI official tutorial — first three pages only (installation, first steps, path parameters)</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Creating a basic FastAPI endpoint</div>
+      <div class="topic-desc">How to create an app, define a route with @app.post(), accept a request body, and return a JSON response. The automatic docs page at /docs.</div>
+      <div class="why">Why: Your entire api.py is one endpoint. This is all you need to know.</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Pydantic models for request validation</div>
+      <div class="topic-desc">How to define what shape your incoming data must be using a Pydantic BaseModel class. What happens when invalid data is sent.</div>
+      <div class="why">Why: Your Question class in api.py uses this to validate that every request has both a text and a model field.</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Running FastAPI with Uvicorn</div>
+      <div class="topic-desc">The uvicorn api:app --reload command. What --reload does. How to test your API using the /docs page.</div>
+      <div class="why">Why: You'll type this command every single time you work on the project.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 5 -->
+<div class="phase">
+  <div class="phase-header" style="background:#EAF3DE;">
+    <div class="phase-num" style="background:#639922;color:#173404;">5</div>
+    <div>
+      <div class="phase-title" style="color:#27500A;">Streamlit — Building the Interface</div>
+      <div style="font-size:12px;color:#3B6D11;">Python that becomes a webpage automatically</div>
+    </div>
+    <div class="phase-time">June Week 2 · 2–3 days</div>
+  </div>
+  <div class="phase-body">
+    <div class="topic">
+      <div class="topic-title">Streamlit basics — text, inputs, buttons</div>
+      <div class="topic-desc">st.title, st.write, st.text_input, st.button, st.selectbox. These five functions build 80% of your interface. Practice making a simple page before connecting it to your API.</div>
+      <div class="why">Why: Your entire chat interface uses exactly these elements.</div>
+      <div class="topic-resource">📚 Resource: Streamlit official 30 minute tutorial — do the whole thing</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Streamlit layout — columns, tabs, sidebar</div>
+      <div class="topic-desc">st.sidebar, st.tabs, st.columns. How to organise your page into sections. This is how you build the two-tab layout with the model selector in the sidebar.</div>
+      <div class="why">Why: Your dashboard has a sidebar, two tabs, and metric columns. You need these three layout tools.</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Connecting Streamlit to FastAPI using requests</div>
+      <div class="topic-desc">How to use the requests library to send a POST request from your Streamlit app to your FastAPI endpoint and display the response. This is the moment everything connects.</div>
+      <div class="why">Why: This is the single most important connection in your whole project.</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Session state in Streamlit</div>
+      <div class="topic-desc">Why Streamlit reruns your whole script every time something changes. How st.session_state lets you keep data between reruns — like storing chat history.</div>
+      <div class="why">Why: Without session state your chat history disappears every time the user clicks Ask.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 6 -->
+<div class="phase">
+  <div class="phase-header" style="background:#FAECE7;">
+    <div class="phase-num" style="background:#D85A30;color:#4A1B0C;">6</div>
+    <div>
+      <div class="phase-title" style="color:#712B13;">Pandas and Plotly — Data and Charts</div>
+      <div style="font-size:12px;color:#993C1D;">Recording results and visualising them</div>
+    </div>
+    <div class="phase-time">June Week 3 · 2–3 days</div>
+  </div>
+  <div class="phase-body">
+    <div class="grid2">
+      <div class="topic">
+        <div class="topic-title">Pandas basics</div>
+        <div class="topic-desc">Creating a DataFrame, appending rows, reading and writing CSV files, groupby and mean for calculating averages per model.</div>
+        <div class="why">Why: Your benchmark results live in a Pandas DataFrame saved to CSV.</div>
+        <div class="topic-resource">📚 Resource: Pandas getting started — first three tutorials only</div>
+      </div>
+      <div class="topic">
+        <div class="topic-title">Plotly Express basics</div>
+        <div class="topic-desc">px.bar for bar charts, px.scatter for scatter plots. How to set x, y, color, and title. How to display in Streamlit with st.plotly_chart.</div>
+        <div class="why">Why: Your three benchmark charts all use Plotly Express — it's three lines of code per chart.</div>
+        <div class="topic-resource">📚 Resource: Plotly Express getting started — bar charts and scatter only</div>
+      </div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Measuring time and RAM in Python</div>
+      <div class="topic-desc">time.time() for measuring response duration. psutil.virtual_memory().used for RAM readings. How to calculate the difference before and after a function call.</div>
+      <div class="why">Why: These two measurements are the core of your benchmark script.</div>
+    </div>
+  </div>
+</div>
+
+<!-- PHASE 7 -->
+<div class="phase">
+  <div class="phase-header" style="background:#E1F5EE;">
+    <div class="phase-num" style="background:#5DCAA5;color:#04342C;">7</div>
+    <div>
+      <div class="phase-title" style="color:#085041;">Git and GitHub — Saving and Sharing Your Work</div>
+      <div style="font-size:12px;color:#0F6E56;">Version control and portfolio presentation</div>
+    </div>
+    <div class="phase-time">Ongoing from day 1</div>
+  </div>
+  <div class="phase-body">
+    <div class="topic">
+      <div class="topic-title">Basic Git commands</div>
+      <div class="topic-desc">git init, git add, git commit, git push. That's genuinely all you need. Commit after every meaningful change with a clear message like "add benchmark script" or "fix timer display".</div>
+      <div class="why">Why: Your supervisor expects a GitHub link. Employers look at your commit history to see how you work.</div>
+      <div class="topic-resource">📚 Resource: GitHub's own Git handbook — 10 minute read</div>
+    </div>
+    <div class="topic">
+      <div class="topic-title">Writing a good README</div>
+      <div class="topic-desc">What the project does, why it exists, how to install and run it, what you found in the benchmark. This is the first thing anyone sees when they visit your GitHub.</div>
+      <div class="why">Why: A good README turns a GitHub repo into a portfolio piece. A bad one makes it look unfinished.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Summary -->
+<div style="background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:14px 16px;border:0.5px solid var(--color-border-tertiary);">
+  <div style="font-size:13px;font-weight:600;color:var(--color-text-primary);margin-bottom:10px;">The order that matters</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:12px;color:var(--color-text-secondary);line-height:1.8;">
+    <div>
+      1. Python basics — loops, functions, files<br/>
+      2. What LLMs and SLMs are — conceptually<br/>
+      3. Ollama — install, pull models, test in terminal<br/>
+      4. FastAPI — one endpoint, test on /docs page
+    </div>
+    <div>
+      5. Streamlit — basic page, then connect to FastAPI<br/>
+      6. Pandas — record results, save CSV<br/>
+      7. Plotly — three charts from your CSV<br/>
+      8. GitHub — commit everything as you go
+    </div>
+  </div>
+  <div style="margin-top:10px;font-size:12px;color:var(--color-text-secondary);border-top:0.5px solid var(--color-border-tertiary);padding-top:10px;">
+    <strong style="color:var(--color-text-primary);">The golden rule:</strong> After studying each topic for 30 minutes, close the tutorial and try to write the code yourself from memory. Getting it wrong and fixing it teaches you 10x more than reading does.
+  </div>
+</div>
+
+</div>

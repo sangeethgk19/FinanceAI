@@ -1,0 +1,8 @@
+.env
+venv/
+__pycache__/
+*.pyc
+results_scored.csv
+test_gemini.py
+test_groq.py
+test_score.py
